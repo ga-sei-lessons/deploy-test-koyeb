@@ -13,6 +13,7 @@ app.use(ejsLayouts)
 app.use(express.static('public'))
 // allow POST actions from forms
 app.use(express.urlencoded({ extended: true }))
+const PORT = process.env.PORT || 3002
 
 // route zone
 app.get('/', (req, res) => {
@@ -21,7 +22,8 @@ app.get('/', (req, res) => {
 
 app.use('/works', require('./controllers/worksController'))
 app.use('/faves', require('./controllers/favesController'))
-app.listen(3000, () => {
+
+app.listen(PORT, () => {
   console.log('server started!')
   rowdyResults.print()
   console.log(process.env.BING)
