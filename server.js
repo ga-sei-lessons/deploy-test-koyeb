@@ -26,5 +26,4 @@ app.use('/faves', require('./controllers/favesController'))
 app.listen(PORT, () => {
   console.log('server started!')
   rowdyResults.print()
-  console.log(process.env.BING)
 })
